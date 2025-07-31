@@ -18,4 +18,3 @@ async def task_wait_n(
     completion times in ascending order."""
     task = [task_wait_random(max_delay) for _ in range(n)]
     return [await i for i in asyncio.as_completed(task)]
-
