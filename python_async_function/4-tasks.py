@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """This module contains functions for
 working with the wait_n function.
