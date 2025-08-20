@@ -1,12 +1,11 @@
-import ClassRoom from './0-classroom';
+export default function taskBlock(trueOrFalse) {
+  const task = false;
+  const task2 = true;
 
-// Implement the initializeRooms function
-function initializeRooms() {
-  const room1 = new ClassRoom(19);
-  const room2 = new ClassRoom(20);
-  const room3 = new ClassRoom(34);
+  if (trueOrFalse) {
+    // const new_task = true;
+    // const new_task2 = false;
+  }
 
-  return [room1, room2, room3];
+  return [task, task2];
 }
-
-export default initializeRooms;
