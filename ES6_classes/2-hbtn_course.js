@@ -1,19 +1,19 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    // Verify and set name
+    // Validate and set name
     if (typeof name !== 'string') {
       throw new TypeError('Name must be a string');
     }
     this._name = name;
 
-    // Verify and set length
+    // Validate and set length
     if (typeof length !== 'number') {
       throw new TypeError('Length must be a number');
     }
     this._length = length;
 
-    // Verify and set students
-    if (!Array.isArray(students) || !students.every(student => typeof student === 'string')) {
+    // Validate and set students
+    if (!Array.isArray(students) || !students.every((student) => typeof student === 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
     this._students = students;
@@ -24,11 +24,11 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  set name(newName) {
-    if (typeof newName !== 'string') {
+  set name(value) {
+    if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = newName;
+    this._name = value;
   }
 
   // Getter and setter for length
@@ -36,11 +36,11 @@ export default class HolbertonCourse {
     return this._length;
   }
 
-  set length(newLength) {
-    if (typeof newLength !== 'number') {
+  set length(value) {
+    if (typeof value !== 'number') {
       throw new TypeError('Length must be a number');
     }
-    this._length = newLength;
+    this._length = value;
   }
 
   // Getter and setter for students
@@ -48,10 +48,10 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set students(newStudents) {
-    if (!Array.isArray(newStudents) || !newStudents.every(student => typeof student === 'string')) {
+  set students(value) {
+    if (!Array.isArray(value) || !value.every((student) => typeof student === 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
-    this._students = newStudents;
+    this._students = value;
   }
 }
