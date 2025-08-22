@@ -1,18 +1,18 @@
 export default class Building {
   constructor(sqft) {
-    if (typeof sqft !== 'number') {
-      throw new TypeError('Sqft must be a number');
+    if (this.constructor !== Building && this.evacuationWarningMessage === undefined) {
+      throw Error('Class extending Building must override evacuationWarningMessage');
     }
+    // Setting the _sqft property to the value passed in the constructor
     this._sqft = sqft;
-    
-    // Check if this is being instantiated directly (not a subclass)
-    if (this.constructor !== Building) {
-      if (typeof this.evacuationWarningMessage !== 'function') {
-        throw new Error('Class extending Building must override evacuationWarningMessage');
-      }
-    }
   }
 
+  // Setter for the sqft property
+  set sqft(sqft) {
+    this._sqft = sqft;
+  }
+
+  // Getter for the sqft property
   get sqft() {
     return this._sqft;
   }
