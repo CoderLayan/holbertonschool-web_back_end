@@ -1,14 +1,18 @@
 const express = require('express');
 
+// Create Express app
 const app = express();
-const port = 1245;
 
-app.get('/', (_, res) => {
+// Define route for root endpoint
+app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(port, () => {
-  console.log(`Server is listening in port ${port}`);
+// Make the server listen on port 1245
+const PORT = 1245;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
+// Export the app variable as required
 module.exports = app;
